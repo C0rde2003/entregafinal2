@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header class="head">
+        <div class="logo"></div>
+        <nav class="navbar">
+            <a href="Paginawebbasica.html">Inicio</a>
+            <a href="index.html">acerca de mi </a>
+            <a href="misnovelas.html">Mis novelas</a> 
+        </nav>
+    </header>
+     <section class="container">
+        <div class="contact-form">
+            <h1>Contacto</h1>
+            <form action="procesarformulario.php" method="POST" autocomplete="on">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+                
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="Ingresa tu correo" required>
+
+                <label for="asunto">Asunto:</label>
+                <input type="text" id="asunto" name="asunto" placeholder="Ingresa el asunto del mensaje">
+                
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Ingresa tu mensaje" required></textarea>
+        </div>
+    </section>
+
+    <section class="content contact">
+        <h2 class="title">Contáctame</h2>
+        <p>Tu opinión es valiosa para mí. ¡No dudes en contactarme!</p>
+        <form id="contact-form" action="procesarformulario.php" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <button type="submit" name="enviar">Enviar mensaje</button>
+        </form>
+    </section>
+    
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            // Prevenir el envío normal del formulario
+            event.preventDefault();
+            
+            // Redirigir a la página de error 404
+            window.location.href = 'HTML/404.html'; // Ajusta la URL si es necesario
+        });
+    </script>
